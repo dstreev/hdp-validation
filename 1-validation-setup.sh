@@ -9,7 +9,7 @@ hdfs dfs -mkdir /tmp/dual
 hdfs dfs -put data/dual.txt /tmp/dual/
 
 # Move the need files to HDFS.
-hdfs dfs -test -d /apps/hive/shared/lib && echo "Shared Lib directory exists" || hdfs dfs -mkdir -p /apps/hive/shared/lib
+hdfs dfs -test -d /apps/hive/shared/lib && echo "Shared Lib directory exists" || echo "Need to create the /apps/hive/shared/lib and make 'hive' the owner"; exit -1;
 
 hdfs dfs -test -f /apps/hive/shared/lib/hive.honey-1.0-SNAPSHOT-shaded.jar && \
     echo "Jar found, replacing with current version"; hdfs dfs -rm -f  -skipTrash /apps/hive/shared/lib/hive.honey-1.0-SNAPSHOT-shaded.jar
