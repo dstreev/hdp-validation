@@ -1,6 +1,11 @@
 # Run through hive tests.
 . ./validation-env.sh
 
+if [ "${USER}" != "hive" ]; then
+    echo "Should be run as the 'hive' user"
+    exit -1
+fi
+
 echo "Running tests with 'hive cli'"
 . ./run-hive.sh hive
 

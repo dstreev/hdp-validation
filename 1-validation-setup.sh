@@ -1,6 +1,11 @@
 # Get the environment values
 . ./validation-env.sh
 
+if [ "${USER}" != "hive" ]; then
+    echo "Should be run as the 'hive' user"
+    exit -1
+fi
+
 # Create a DUAL table to use for testing functions.
 # Move the dual.txt file to hdfs /tmp/dual
 hdfs dfs -test -d /tmp/dual && echo "Target Directory already exists, removing"; hdfs dfs -rm -r -f -skipTrash /tmp/dual
