@@ -5,4 +5,4 @@
  
  tar cfz ../dist/hdp-hive-validation.tgz ../hive-validation
 
- tar cfz ../dist/hdp-upgrade.tgz ../hdp-upgrade
+ tar cfz ../dist/hdp-reset.tgz ../hdp-reset

@@ -15,4 +15,4 @@
 "oozie_log_dir"|"/hadoop/logs/oozie"|ENSURE
 "oozie_permsize"|"256m"|ENSURE
 "oozie_pid_dir"|"/var/run/oozie"|ENSURE
-"oozie_user"|"oozie"
+"oozie_user"|"oozie"|ENSURE

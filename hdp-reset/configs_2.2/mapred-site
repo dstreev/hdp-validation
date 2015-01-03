@@ -41,4 +41,3 @@
 "yarn.app.mapreduce.am.log.level"|"INFO"|RESET
 "yarn.app.mapreduce.am.resource.mb"|"3072"|ENSURE
 "yarn.app.mapreduce.am.staging-dir"|"/user"|RESET
-

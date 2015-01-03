@@ -27,4 +27,4 @@
 "oozie.services.ext"|"org.apache.oozie.service.JMSAccessorService,org.apache.oozie.service.PartitionDependencyManagerService,org.apache.oozie.service.HCatAccessorService"|ENSURE
 "oozie.system.id"|"oozie-${user.name}"|ENSURE
 "oozie.systemmode"|"NORMAL"|ENSURE
-"use.system.libpath.for.mapreduce.and.pig.jobs"|"false"
+"use.system.libpath.for.mapreduce.and.pig.jobs"|"false"|ENSURE

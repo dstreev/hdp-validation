@@ -35,7 +35,7 @@ ambari_properties.eachLine { line ->
     }
 }
 
-println component_properties;
+//println component_properties;
 
 def target_properties = [:]
 /*
@@ -46,7 +46,8 @@ The resulting list is feed back into Ambari to update the configuration.
  */
 check_file = new File(options.cf)
 check_file.eachLine { line ->
-    if (!line.startsWith("#")) {
+    if (!line.startsWith("#") && line.trim().length() > 0) {
+//        println line
         def check_set = line.split("\\|")
         key = check_set[0].trim().substring(1,check_set[0].trim().length()-1)
         value = check_set[1].trim()
@@ -82,14 +83,12 @@ check_file.eachLine { line ->
 
 // Make sure all the old properties have been transferred.
 component_properties.keySet().each { key ->
-    println(key)
-//    + " " + target_properties.get(key),"NOT_SET")
     if (target_properties.get(key,"NOT_SET").equals("NOT_SET")) {
         target_properties.put(key,component_properties.get(key))
     }
 }
 
-println target_properties.keySet();
+//println target_properties.keySet();
 
 newproperties = new File(options.osf)
 newproperties.withWriter { dc ->
