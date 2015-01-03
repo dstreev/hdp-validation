@@ -1,4 +1,4 @@
-# Post Upgrade Scripts for an Ambari Managed HDP Cluster
+# Reset Scripts for an Ambari Managed HDP Cluster
 
 The HDP platform is growing significantly with each release.  Upgrading just the HDP libraries isn't always enough.  With each release, several configuration options may be added.  AND with each release, the HDP engineers may adjust some parameters to reflect the most common/efficient settings for HDP.
 
