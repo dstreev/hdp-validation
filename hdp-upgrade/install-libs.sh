@@ -64,37 +64,37 @@ cd `dirname $0`
 # "mapreduce.application.framework.path" : "/hdp/apps/${hdp.version}/mapreduce/mapreduce.tar.gz#mr-framework",
 # /usr/hdp/$HDP_VERSION/hadoop/mapreduce.tar.gz
 hdfs dfs -test -d $HDFS_HDP_BASE_DIR/mapreduce && echo "Directory ${HDFS_HDP_BASE_DIR}/mapreduce exists in HDFS" || hdfs dfs -mkdir -p $HDFS_HDP_BASE_DIR/mapreduce
-hdfs dfs -test -f $HDFS_HDP_BASE_DIR/mapreduce/mapreduce.tar.gz && echo "File ${HDFS_HDP_BASE_DIR}/mapreduce/mapreduce.tar.gz exists in HDFS" || echo "Copying file ${HDFS_HDP_BASE_DIR}/mapreduce/mapreduce.tar.gz to HDFS"; hdfs dfs -put /usr/hdp/$HDP_VERSION/hadoop/mapreduce.tar.gz $HDFS_HDP_BASE_DIR/mapreduce
+hdfs dfs -test -f $HDFS_HDP_BASE_DIR/mapreduce/mapreduce.tar.gz && echo "File ${HDFS_HDP_BASE_DIR}/mapreduce/mapreduce.tar.gz exists in HDFS" || hdfs dfs -put /usr/hdp/$HDP_VERSION/hadoop/mapreduce.tar.gz $HDFS_HDP_BASE_DIR/mapreduce
 
 # Tez Framework
 # "tez.lib.uris" : "/hdp/apps/${hdp.version}/tez/tez.tar.gz",
 # /usr/hdp/$HDP_VERSION/tez/lib/tez.tar.gz
 hdfs dfs -test -d $HDFS_HDP_BASE_DIR/tez && echo "Directory ${HDFS_HDP_BASE_DIR}/tez exists in HDFS" || hdfs dfs -mkdir -p $HDFS_HDP_BASE_DIR/tez
-hdfs dfs -test -f $HDFS_HDP_BASE_DIR/tez/tez.tar.gz && echo "File ${HDFS_HDP_BASE_DIR}/tez/tez.tar.gz exists in HDFS" || echo "Copying file ${HDFS_HDP_BASE_DIR}/tez/tez.tar.gz to HDFS"; hdfs dfs -put /usr/hdp/$HDP_VERSION/tez/lib/tez.tar.gz $HDFS_HDP_BASE_DIR/tez
+hdfs dfs -test -f $HDFS_HDP_BASE_DIR/tez/tez.tar.gz && echo "File ${HDFS_HDP_BASE_DIR}/tez/tez.tar.gz exists in HDFS" || hdfs dfs -put /usr/hdp/$HDP_VERSION/tez/lib/tez.tar.gz $HDFS_HDP_BASE_DIR/tez
 
 # Templeton Hive Archive
 # "templeton.hive.archive" : "hdfs:///hdp/apps/${hdp.version}/hive/hive.tar.gz",
 # /usr/hdp/$HDP_VERSION/hive/hive.tar.gz
 hdfs dfs -test -d $HDFS_HDP_BASE_DIR/hive && echo "Directory ${HDFS_HDP_BASE_DIR}/hive exists in HDFS" || hdfs dfs -mkdir -p $HDFS_HDP_BASE_DIR/hive
-hdfs dfs -test -f $HDFS_HDP_BASE_DIR/hive/hive.tar.gz && echo "File ${HDFS_HDP_BASE_DIR}/hive/hive.tar.gz exists in HDFS" || echo "Copying file ${HDFS_HDP_BASE_DIR}/hive/hive.tar.gz to HDFS"; hdfs dfs -put /usr/hdp/$HDP_VERSION/hive/hive.tar.gz $HDFS_HDP_BASE_DIR/hive
+hdfs dfs -test -f $HDFS_HDP_BASE_DIR/hive/hive.tar.gz && echo "File ${HDFS_HDP_BASE_DIR}/hive/hive.tar.gz exists in HDFS" || hdfs dfs -put /usr/hdp/$HDP_VERSION/hive/hive.tar.gz $HDFS_HDP_BASE_DIR/hive
 
 # Templeton Pig Archive
 # "templeton.pig.archive" : "hdfs:///hdp/apps/${hdp.version}/pig/pig.tar.gz",
 #/usr/hdp/$HDP_VERSION/pig/pig.tar.gz
 hdfs dfs -test -d $HDFS_HDP_BASE_DIR/pig && echo "Directory ${HDFS_HDP_BASE_DIR}/pig exists in HDFS" || hdfs dfs -mkdir -p $HDFS_HDP_BASE_DIR/pig
-hdfs dfs -test -f $HDFS_HDP_BASE_DIR/pig/pig.tar.gz && echo "File ${HDFS_HDP_BASE_DIR}/pig/pig.tar.gz exists in HDFS" || echo "Copying file ${HDFS_HDP_BASE_DIR}/pig/pig.tar.gz to HDFS"; hdfs dfs -put /usr/hdp/$HDP_VERSION/pig/pig.tar.gz $HDFS_HDP_BASE_DIR/pig
+hdfs dfs -test -f $HDFS_HDP_BASE_DIR/pig/pig.tar.gz && echo "File ${HDFS_HDP_BASE_DIR}/pig/pig.tar.gz exists in HDFS" || hdfs dfs -put /usr/hdp/$HDP_VERSION/pig/pig.tar.gz $HDFS_HDP_BASE_DIR/pig
 
 # Templeton Sqoop Archive
 # "templeton.sqoop.archive" : "hdfs:///hdp/apps/${hdp.version}/sqoop/sqoop.tar.gz",
 #/usr/hdp/$HDP_VERSION/sqoop/sqoop.tar.gz
 hdfs dfs -test -d $HDFS_HDP_BASE_DIR/sqoop && echo "Directory ${HDFS_HDP_BASE_DIR}/sqoop exists in HDFS" || hdfs dfs -mkdir -p $HDFS_HDP_BASE_DIR/sqoop
-hdfs dfs -test -f $HDFS_HDP_BASE_DIR/sqoop/sqoop.tar.gz && echo "File ${HDFS_HDP_BASE_DIR}/sqoop/sqoop.tar.gz exists in HDFS" || echo "Copying file ${HDFS_HDP_BASE_DIR}/sqoop/sqoop.tar.gz to HDFS"; hdfs dfs -put /usr/hdp/$HDP_VERSION/sqoop/sqoop.tar.gz $HDFS_HDP_BASE_DIR/sqoop
+hdfs dfs -test -f $HDFS_HDP_BASE_DIR/sqoop/sqoop.tar.gz && echo "File ${HDFS_HDP_BASE_DIR}/sqoop/sqoop.tar.gz exists in HDFS" || hdfs dfs -put /usr/hdp/$HDP_VERSION/sqoop/sqoop.tar.gz $HDFS_HDP_BASE_DIR/sqoop
 
 # Templeton Streaming Jar
 # "templeton.streaming.jar" : "hdfs:///hdp/apps/${hdp.version}/mapreduce/hadoop-streaming.jar",
 # /usr/hdp/$HDP_VERSION/hadoop-mapreduce/hadoop-streaming.jar
 hdfs dfs -test -d $HDFS_HDP_BASE_DIR/mapreduce && echo "Directory ${HDFS_HDP_BASE_DIR}/mapreduce exists in HDFS" || hdfs dfs -mkdir -p $HDFS_HDP_BASE_DIR/mapreduce
-hdfs dfs -test -f $HDFS_HDP_BASE_DIR/mapreduce/hadoop-streaming.jar && echo "File ${HDFS_HDP_BASE_DIR}/mapreduce/hadoop-streaming.jar exists in HDFS" || echo "Copying file ${HDFS_HDP_BASE_DIR}/mapreduce/hadoop-streaming.jar to HDFS"; hdfs dfs -put /usr/hdp/$HDP_VERSION/hadoop-mapreduce/hadoop-streaming.jar $HDFS_HDP_BASE_DIR/mapreduce
+hdfs dfs -test -f $HDFS_HDP_BASE_DIR/mapreduce/hadoop-streaming.jar && echo "File ${HDFS_HDP_BASE_DIR}/mapreduce/hadoop-streaming.jar exists in HDFS" || hdfs dfs -put /usr/hdp/$HDP_VERSION/hadoop-mapreduce/hadoop-streaming.jar $HDFS_HDP_BASE_DIR/mapreduce
 
 # Reset the Oozie Libraries.
 hdfs dfs -test -d /user/oozie/share && echo "Oozie share/lib exists. Backing up and reinstalling";hdfs dfs -mv /user/oozie/share /user/oozie/share.$DT || echo "Oozie share/lib doesn't exist, rebuilding..."
