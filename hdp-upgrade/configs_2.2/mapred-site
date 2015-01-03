@@ -1,0 +1,44 @@
+"mapreduce.admin.map.child.java.opts"|"-server -XX:NewRatio=8 -Djava.net.preferIPv4Stack=true -Dhdp.version=${hdp.version}"|RESET
+"mapreduce.admin.reduce.child.java.opts"|"-server -XX:NewRatio=8 -Djava.net.preferIPv4Stack=true -Dhdp.version=${hdp.version}"|RESET
+"mapreduce.admin.user.env"|"LD_LIBRARY_PATH=/usr/hdp/${hdp.version}/hadoop/lib/native:/usr/hdp/${hdp.version}/hadoop/lib/native/Linux-amd64-64"|RESET
+"mapreduce.am.max-attempts"|"2"|RESET
+"mapreduce.application.classpath"|"$PWD/mr-framework/hadoop/share/hadoop/mapreduce/*:$PWD/mr-framework/hadoop/share/hadoop/mapreduce/lib/*:$PWD/mr-framework/hadoop/share/hadoop/common/*:$PWD/mr-framework/hadoop/share/hadoop/common/lib/*:$PWD/mr-framework/hadoop/share/hadoop/yarn/*:$PWD/mr-framework/hadoop/share/hadoop/yarn/lib/*:$PWD/mr-framework/hadoop/share/hadoop/hdfs/*:$PWD/mr-framework/hadoop/share/hadoop/hdfs/lib/*:/usr/hdp/${hdp.version}/hadoop/lib/hadoop-lzo-0.6.0.${hdp.version}.jar:/etc/hadoop/conf/secure"|RESET
+"mapreduce.application.framework.path"|"/hdp/apps/${hdp.version}/mapreduce/mapreduce.tar.gz#mr-framework"|RESET
+"mapreduce.cluster.administrators"|" hadoop"|ENSURE
+"mapreduce.framework.name"|"yarn"|RESET
+"mapreduce.job.emit-timeline-data"|"false"|RESET
+"mapreduce.job.reduce.slowstart.completedmaps"|"0.05"|ENSURE
+"mapreduce.jobhistory.address"|"localhost:10020"|ENSURE_ALERT
+"mapreduce.jobhistory.bind-host"|"0.0.0.0"|ENSURE
+"mapreduce.jobhistory.done-dir"|"/mr-history/done"|ENSURE
+"mapreduce.jobhistory.intermediate-done-dir"|"/mr-history/tmp"|ENSURE
+"mapreduce.jobhistory.webapp.address"|"localhost:19888"|ENSURE_ALERT
+"mapreduce.map.java.opts"|"-Xmx2458m"|ENSURE
+"mapreduce.map.log.level"|"INFO"|RESET
+"mapreduce.map.memory.mb"|"3072"|ENSURE
+"mapreduce.map.output.compress"|"false"|RESET
+"mapreduce.map.sort.spill.percent"|"0.7"|RESET
+"mapreduce.map.speculative"|"false"|RESET
+"mapreduce.output.fileoutputformat.compress"|"false"|RESET
+"mapreduce.output.fileoutputformat.compress.type"|"BLOCK"|RESET
+"mapreduce.reduce.input.buffer.percent"|"0.0"|RESET
+"mapreduce.reduce.java.opts"|"-Xmx2458m"|ENSURE
+"mapreduce.reduce.log.level"|"INFO"|RESET
+"mapreduce.reduce.memory.mb"|"3072"|ENSURE
+"mapreduce.reduce.shuffle.fetch.retry.enabled"|"1"|RESET
+"mapreduce.reduce.shuffle.fetch.retry.interval-ms"|"1000"|RESET
+"mapreduce.reduce.shuffle.fetch.retry.timeout-ms"|"30000"|RESET
+"mapreduce.reduce.shuffle.input.buffer.percent"|"0.7"|RESET
+"mapreduce.reduce.shuffle.merge.percent"|"0.66"|RESET
+"mapreduce.reduce.shuffle.parallelcopies"|"30"|RESET
+"mapreduce.reduce.speculative"|"false"|RESET
+"mapreduce.shuffle.port"|"13562"|RESET
+"mapreduce.task.io.sort.factor"|"100"|RESET
+"mapreduce.task.io.sort.mb"|"1024"|ENSURE
+"mapreduce.task.timeout"|"300000"|RESET
+"yarn.app.mapreduce.am.admin-command-opts"|"-Dhdp.version=${hdp.version}"|RESET
+"yarn.app.mapreduce.am.command-opts"|"-Xmx2458m -Dhdp.version=${hdp.version}"|RESET
+"yarn.app.mapreduce.am.log.level"|"INFO"|RESET
+"yarn.app.mapreduce.am.resource.mb"|"3072"|ENSURE
+"yarn.app.mapreduce.am.staging-dir"|"/user"|RESET
+

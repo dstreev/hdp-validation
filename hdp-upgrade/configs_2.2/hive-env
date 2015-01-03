@@ -1,0 +1,9 @@
+"content"|"\n if [ \"$SERVICE\" = \"cli\" ]; then\n if [ -z \"$DEBUG\" ]; then\n export HADOOP_OPTS=\"$HADOOP_OPTS -XX:NewRatio=12 -Xms10m -XX:MaxHeapFreeRatio=40 -XX:MinHeapFreeRatio=15 -XX:+UseParNewGC -XX:-UseGCOverheadLimit\"\n else\n export HADOOP_OPTS=\"$HADOOP_OPTS -XX:NewRatio=12 -Xms10m -XX:MaxHeapFreeRatio=40 -XX:MinHeapFreeRatio=15 -XX:-UseGCOverheadLimit\"\n fi\n fi\n\n# The heap size of the jvm stared by hive shell script can be controlled via:\n\nexport HADOOP_HEAPSIZE=\"{{hive_heapsize}}\"\nexport HADOOP_CLIENT_OPTS=\"-Xmx${HADOOP_HEAPSIZE}m $HADOOP_CLIENT_OPTS\"\n\n# Larger heap size may be required when running queries over large number of files or partitions.\n# By default hive shell scripts use a heap size of 256 (MB). Larger heap size would also be\n# appropriate for hive server (hwi etc).\n\n\n# Set HADOOP_HOME to point to a specific hadoop install directory\nHADOOP_HOME=${HADOOP_HOME:-{{hadoop_home}}}\n\n# Hive Configuration Directory can be controlled by:\nexport HIVE_CONF_DIR={{hive_config_dir}}\n\n# Folder containing extra libraries required for hive compilation/execution can be controlled by:\nif [ \"${HIVE_AUX_JARS_PATH}\" != \"\" ]; then\n export HIVE_AUX_JARS_PATH=${HIVE_AUX_JARS_PATH}\nelif [ -d \"/usr/hdp/current/hive-webhcat/share/hcatalog\" ]; then\n export HIVE_AUX_JARS_PATH=/usr/hdp/current/hive-webhcat/share/hcatalog\nfi\n\nexport METASTORE_PORT={{hive_metastore_port}}"|RESET
+"hcat_log_dir"|"/var/log/webhcat"|ENSURE
+"hcat_pid_dir"|"/var/run/webhcat"|ENSURE
+"hcat_user"|"hcat"|ENUSRE
+"hive_log_dir"|"/var/logs/hive"|ENSURE
+"hive_metastore_port"|"9083"|ENSURE
+"hive_pid_dir"|"/var/run/hive"|ENSURE
+"hive_user"|"hive"|ENSURE
+"webhcat_user"|"hcat"|ENSURE

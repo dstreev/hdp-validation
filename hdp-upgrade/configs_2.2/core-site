@@ -1,0 +1,24 @@
+"fs.defaultFS"|"hdfs://localhost:8020"|ENSURE_ALERT
+"fs.trash.interval"|"360"|ENSURE
+"hadoop.http.authentication.simple.anonymous.allowed"|"true"|ENSURE
+"hadoop.proxyuser.hcat.groups"|"*"|ENSURE
+"hadoop.proxyuser.hcat.hosts"|"*"|ENSURE
+"hadoop.proxyuser.hdfs.groups"|"*"|ENSURE
+"hadoop.proxyuser.hdfs.hosts"|"*"|ENSURE
+"hadoop.proxyuser.hive.groups"|"users"|ENSURE
+"hadoop.proxyuser.hive.hosts"|"*"|ENSURE
+"hadoop.proxyuser.hue.groups"|"*"|ENSURE
+"hadoop.proxyuser.hue.hosts"|"*"|ENSURE
+"hadoop.proxyuser.oozie.groups"|"*"|ENSURE
+"hadoop.proxyuser.oozie.hosts"|"*"|ENSURE
+"hadoop.security.auth_to_local"|"\n RULE:[2:$1@$0]([rn]m@.*)s/.*/yarn/\n RULE:[2:$1@$0](jhs@.*)s/.*/mapred/\n RULE:[2:$1@$0]([nd]n@.*)s/.*/hdfs/\n RULE:[2:$1@$0](hm@.*)s/.*/hbase/\n RULE:[2:$1@$0](rs@.*)s/.*/hbase/\n DEFAULT"|ENSURE
+"hadoop.security.authentication"|"simple"|ENSURE
+"hadoop.security.authorization"|"false"|ENSURE
+"io.compression.codecs"|"org.apache.hadoop.io.compress.GzipCodec,org.apache.hadoop.io.compress.DefaultCodec,org.apache.hadoop.io.compress.SnappyCodec"|RESET
+"io.file.buffer.size"|"131072"|ENSURE
+"io.serializations"|"org.apache.hadoop.io.serializer.WritableSerialization"|RESET
+"ipc.client.connect.max.retries"|"50"|RESET
+"ipc.client.connection.maxidletime"|"30000"|RESET
+"ipc.client.idlethreshold"|"8000"|RESET
+"ipc.server.tcpnodelay"|"true"|RESET
+"mapreduce.jobtracker.webinterface.trusted"|"false"|ENSURE

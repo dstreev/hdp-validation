@@ -1,0 +1,39 @@
+"tez.am.am-rm.heartbeat.interval-ms.max"|"250"|RESET
+"tez.am.container.idle.release-timeout-max.millis"|"20000"|RESET
+"tez.am.container.idle.release-timeout-min.millis"|"10000"|RESET
+"tez.am.container.reuse.enabled"|"true"|RESET
+"tez.am.container.reuse.locality.delay-allocation-millis"|"250"|RESET
+"tez.am.container.reuse.non-local-fallback.enabled"|"false"|RESET
+"tez.am.container.reuse.rack-fallback.enabled"|"true"|RESET
+"tez.am.launch.cluster-default.cmd-opts"|"-server -Djava.net.preferIPv4Stack=true -Dhdp.version=${hdp.version}"|RESET
+"tez.am.launch.cmd-opts"|"-XX:+PrintGCDetails -verbose:gc -XX:+PrintGCTimeStamps -XX:+UseNUMA -XX:+UseParallelGC"|RESET
+"tez.am.launch.env"|"LD_LIBRARY_PATH=/usr/hdp/${hdp.version}/hadoop/lib/native:/usr/hdp/${hdp.version}/hadoop/lib/native/Linux-amd64-64"|RESET
+"tez.am.log.level"|"INFO"|RESET
+"tez.am.max.app.attempts"|"2"|RESET
+"tez.am.maxtaskfailures.per.node"|"10"|RESET
+"tez.am.resource.memory.mb"|"3072"|ENSURE
+"tez.cluster.additional.classpath.prefix"|"/usr/hdp/${hdp.version}/hadoop/lib/hadoop-lzo-0.6.0.${hdp.version}.jar:/etc/hadoop/conf/secure"|RESET
+"tez.counters.max"|"2000"|RESET
+"tez.counters.max.groups"|"1000"|RESET
+"tez.generate.debug.artifacts"|"false"|RESET
+"tez.grouping.max-size"|"1073741824"|RESET
+"tez.grouping.min-size"|"16777216"|RESET
+"tez.grouping.split-waves"|"1.7"|RESET
+"tez.history.logging.service.class"|"org.apache.tez.dag.history.logging.ats.ATSHistoryLoggingService"|RESET
+"tez.lib.uris"|"/hdp/apps/${hdp.version}/tez/tez.tar.gz"|RESET
+"tez.runtime.compress"|"true"|RESET
+"tez.runtime.compress.codec"|"org.apache.hadoop.io.compress.SnappyCodec"|RESET
+"tez.runtime.io.sort.mb"|"1228"|ENSURE
+"tez.runtime.unordered.output.buffer.size-mb"|"230"|ENSURE
+"tez.session.am.dag.submit.timeout.secs"|"300"|ENSURE
+"tez.session.client.timeout.secs"|"-1"|RESET
+"tez.shuffle-vertex-manager.max-src-fraction"|"0.4"|RESET
+"tez.shuffle-vertex-manager.min-src-fraction"|"0.2"|RESET
+"tez.staging-dir"|"/tmp/${user.name}/staging"|RESET
+"tez.task.am.heartbeat.counter.interval-ms.max"|"4000"|RESET
+"tez.task.get-task.sleep.interval-ms.max"|"200"|RESET
+"tez.task.launch.cluster-default.cmd-opts"|"-server -Djava.net.preferIPv4Stack=true -Dhdp.version=${hdp.version}"|RESET
+"tez.task.launch.cmd-opts"|"-XX:+PrintGCDetails -verbose:gc -XX:+PrintGCTimeStamps -XX:+UseNUMA -XX:+UseParallelGC"|RESET
+"tez.task.launch.env"|"LD_LIBRARY_PATH=/usr/hdp/${hdp.version}/hadoop/lib/native:/usr/hdp/${hdp.version}/hadoop/lib/native/Linux-amd64-64"|RESET
+"tez.task.max-events-per-heartbeat"|"500"|RESET
+"tez.task.resource.memory.mb"|"3072"|ENSURE

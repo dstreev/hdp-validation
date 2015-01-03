@@ -1,0 +1,23 @@
+"templeton.exec.timeout"|"60000"|ENSURE
+"templeton.hadoop"|"/usr/hdp/current/hadoop-client/bin/hadoop"|RESET
+"templeton.hadoop.conf.dir"|"/etc/hadoop/conf"|RESET
+"templeton.hcat"|"/usr/hdp/current/hive-client/bin/hcat"|RESET
+"templeton.hcat.home"|"hive.tar.gz/hive/hcatalog"|RESET
+"templeton.hive.archive"|"hdfs:///hdp/apps/${hdp.version}/hive/hive.tar.gz"|RESET
+"templeton.hive.home"|"hive.tar.gz/hive"|RESET
+"templeton.hive.path"|"hive.tar.gz/hive/bin/hive"|RESET
+"templeton.hive.properties"|"hive.metastore.local=false, hive.metastore.uris=thrift://localhost:9933, hive.metastore.sasl.enabled=false, hive.metastore.execute.setugi=true"|ENSURE_ALERT
+"templeton.jar"|"/usr/hdp/current/hive-webhcat/share/webhcat/svr/lib/hive-webhcat-*.jar"|RESET
+"templeton.libjars"|"/usr/hdp/current/zookeeper-client/zookeeper.jar"|RESET
+"templeton.override.enabled"|"false"|RESET
+"templeton.pig.archive"|"hdfs:///hdp/apps/${hdp.version}/pig/pig.tar.gz"|RESET
+"templeton.pig.path"|"pig.tar.gz/pig/bin/pig"|RESET
+"templeton.port"|"50111"|ENSURE
+"templeton.sqoop.archive"|"hdfs:///hdp/apps/${hdp.version}/sqoop/sqoop.tar.gz"|RESET
+"templeton.sqoop.home"|"sqoop.tar.gz/sqoop"|RESET
+"templeton.sqoop.path"|"sqoop.tar.gz/sqoop/bin/sqoop"|RESET
+"templeton.storage.class"|"org.apache.hive.hcatalog.templeton.tool.ZooKeeperStorage"|RESET
+"templeton.streaming.jar"|"hdfs:///hdp/apps/${hdp.version}/mapreduce/hadoop-streaming.jar"|RESET
+"templeton.zookeeper.hosts"|"localhost1:2181,localhost2:2181,localhost3:2181"|ENSURE_ALERT
+"webhcat.proxyuser.hue.groups"|"*"|ENSURE
+"webhcat.proxyuser.hue.hosts"|"*"|ENSURE

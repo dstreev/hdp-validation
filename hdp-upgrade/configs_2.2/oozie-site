@@ -1,0 +1,30 @@
+"oozie.authentication.kerberos.name.rules"|"\n RULE:[2:$1@$0]([jt]t@.*TODO-KERBEROS-DOMAIN)s/.*/TODO-MAPREDUSER/\n RULE:[2:$1@$0]([nd]n@.*TODO-KERBEROS-DOMAIN)s/.*/TODO-HDFSUSER/\n RULE:[2:$1@$0](hm@.*TODO-KERBEROS-DOMAIN)s/.*/TODO-HBASE-USER/\n RULE:[2:$1@$0](rs@.*TODO-KERBEROS-DOMAIN)s/.*/TODO-HBASE-USER/\n DEFAULT"|ENSURE
+"oozie.authentication.simple.anonymous.allowed"|"true"|ENSURE
+"oozie.authentication.type"|"simple"|ENSURE
+"oozie.base.url"|"http://localhost:11000/oozie"|ENSURE_ALERT
+"oozie.credentials.credentialclasses"|"hcat=org.apache.oozie.action.hadoop.HCatCredentials"|ENSURE
+"oozie.service.ActionService.executor.ext.classes"|"\n org.apache.oozie.action.email.EmailActionExecutor,\n org.apache.oozie.action.hadoop.HiveActionExecutor,\n org.apache.oozie.action.hadoop.ShellActionExecutor,\n org.apache.oozie.action.hadoop.SqoopActionExecutor,\n org.apache.oozie.action.hadoop.DistcpActionExecutor"|ENSURE
+"oozie.service.AuthorizationService.security.enabled"|"true"|ENSURE
+"oozie.service.CallableQueueService.callable.concurrency"|"3"|ENSURE
+"oozie.service.CallableQueueService.queue.size"|"1000"|ENSURE
+"oozie.service.CallableQueueService.threads"|"10"|ENSURE
+"oozie.service.HadoopAccessorService.hadoop.configurations"|"*=/etc/hadoop/conf"|ENSURE
+"oozie.service.HadoopAccessorService.kerberos.enabled"|"false"|ENSURE
+"oozie.service.JPAService.create.db.schema"|"false"|ENSURE
+"oozie.service.ProxyUserService.proxyuser.falcon.groups"|"*"|ENSURE
+"oozie.service.ProxyUserService.proxyuser.falcon.hosts"|"*"|ENSURE
+"oozie.service.ProxyUserService.proxyuser.hue.groups"|"*"|ENSURE
+"oozie.service.ProxyUserService.proxyuser.hue.hosts"|"*"|ENSURE
+"oozie.service.PurgeService.older.than"|"30"|ENSURE
+"oozie.service.PurgeService.purge.interval"|"3600"|ENSURE
+"oozie.service.SchemaService.wf.ext.schemas"|"shell-action-0.1.xsd,shell-action-0.2.xsd,shell-action-0.3.xsd,email-action-0.1.xsd,email-action-0.2.xsd,hive-action-0.2.xsd,hive-action-0.3.xsd,hive-action-0.4.xsd,hive-action-0.5.xsd,sqoop-action-0.2.xsd,sqoop-action-0.3.xsd,sqoop-action-0.4.xsd,ssh-action-0.1.xsd,ssh-action-0.2.xsd,distcp-action-0.1.xsd,distcp-action-0.2.xsd,oozie-sla-0.1.xsd,oozie-sla-0.2.xsd"|ENSURE
+"oozie.service.URIHandlerService.uri.handlers"|"org.apache.oozie.dependency.FSURIHandler,org.apache.oozie.dependency.HCatURIHandler"|ENSURE
+"oozie.service.WorkflowAppService.system.libpath"|"/user/${user.name}/share/lib"|ENSURE
+"oozie.service.coord.check.maximum.frequency"|"false"|ENSURE
+"oozie.service.coord.normal.default.timeout"|"120"|ENSURE
+"oozie.service.coord.push.check.requeue.interval"|"30000"|ENSURE
+"oozie.services"|"\n org.apache.oozie.service.SchedulerService,\n org.apache.oozie.service.InstrumentationService,\n org.apache.oozie.service.MemoryLocksService,\n org.apache.oozie.service.UUIDService,\n org.apache.oozie.service.ELService,\n org.apache.oozie.service.AuthorizationService,\n org.apache.oozie.service.UserGroupInformationService,\n org.apache.oozie.service.HadoopAccessorService,\n org.apache.oozie.service.JobsConcurrencyService,\n org.apache.oozie.service.URIHandlerService,\n org.apache.oozie.service.DagXLogInfoService,\n org.apache.oozie.service.SchemaService,\n org.apache.oozie.service.LiteWorkflowAppService,\n org.apache.oozie.service.JPAService,\n org.apache.oozie.service.StoreService,\n org.apache.oozie.service.CoordinatorStoreService,\n org.apache.oozie.service.SLAStoreService,\n org.apache.oozie.service.DBLiteWorkflowStoreService,\n org.apache.oozie.service.CallbackService,\n org.apache.oozie.service.ShareLibService,\n org.apache.oozie.service.CallableQueueService,\n org.apache.oozie.service.ActionService,\n org.apache.oozie.service.ActionCheckerService,\n org.apache.oozie.service.RecoveryService,\n org.apache.oozie.service.PurgeService,\n org.apache.oozie.service.CoordinatorEngineService,\n org.apache.oozie.service.BundleEngineService,\n org.apache.oozie.service.DagEngineService,\n org.apache.oozie.service.CoordMaterializeTriggerService,\n org.apache.oozie.service.StatusTransitService,\n org.apache.oozie.service.PauseTransitService,\n org.apache.oozie.service.GroupsService,\n org.apache.oozie.service.ProxyUserService,\n org.apache.oozie.service.XLogStreamingService,\n org.apache.oozie.service.JvmPauseMonitorService"|ENSURE
+"oozie.services.ext"|"org.apache.oozie.service.JMSAccessorService,org.apache.oozie.service.PartitionDependencyManagerService,org.apache.oozie.service.HCatAccessorService"|ENSURE
+"oozie.system.id"|"oozie-${user.name}"|ENSURE
+"oozie.systemmode"|"NORMAL"|ENSURE
+"use.system.libpath.for.mapreduce.and.pig.jobs"|"false"
