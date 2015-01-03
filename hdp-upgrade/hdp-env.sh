@@ -1,6 +1,7 @@
 #!/bin/bash
 
-AMBARI_HOST=m1.hdp.local
+# Validate these values for your environment
+AMBARI_HOST=localhost
 AMBARI_USER=admin
 AMBARI_PASSWORD=admin
 AMBARI_PORT=8080

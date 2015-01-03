@@ -16,6 +16,10 @@ The scripts WILL reset values related to Hive Queries and execution to reflect t
 
 Backed ALL related HDP Databases. Ambari, Hive, Oozie.
 
+Edit the `hdp-env.sh` file to reflect the location and credentials for Ambari.  Check that the 'major' HDP version matches your environment. Adjust the 'name' of your cluster for the Ambari REST API.
+
+The `reset-hdp.sh` script relies on groovy 2.3.+.  Groovy needs to be in the PATH in order for the script to run. Instructions for installing groovy can be found [here](http://groovy.codehaus.org/Installing+Groovy).
+
 ### Running the Scripts
 
 #### Library Validation and Installation
