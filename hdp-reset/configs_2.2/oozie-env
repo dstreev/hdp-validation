@@ -2,14 +2,6 @@
 "oozie_admin_port"|"11001"|ENSURE
 "oozie_ambari_database"|"MySQL"|ENSURE
 "oozie_data_dir"|"/hadoop/oozie/data"|ENSURE
-"oozie_database"|"Existing MySQL Database"|ENSURE
-"oozie_derby_database"|"Derby"|ENSURE
-"oozie_existing_mysql_database"|"MySQL"|ENSURE
-"oozie_existing_mysql_host"|"wrehdpcluster.ccldc5pbeq8j.us-east-1.rds.amazonaws.com"|ENSURE
-"oozie_existing_oracle_database"|"Oracle"|ENSURE
-"oozie_existing_oracle_host"|""|ENSURE
-"oozie_existing_postgresql_database"|"PostgreSQL"|ENSURE
-"oozie_existing_postgresql_host"|""|ENSURE
 "oozie_heapsize"|"2048m"|ENSURE
 "oozie_hostname"|""|ENSURE
 "oozie_log_dir"|"/hadoop/logs/oozie"|ENSURE
