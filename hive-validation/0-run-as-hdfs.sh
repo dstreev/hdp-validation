@@ -7,4 +7,4 @@ if [ "${USER}" != "hdfs" ]; then
 fi
 
 hdfs dfs -test -d /apps/hive/shared/validation/lib && echo "Shared Lib directory exists" || hdfs dfs -mkdir -p /apps/hive/shared/validation/lib
-hdfs dfs -chmod -R hive /apps/hive/shared
+hdfs dfs -chown -R hive /apps/hive/shared
