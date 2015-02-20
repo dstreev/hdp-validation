@@ -1,3 +1,7 @@
+create database if not exists ${USER} location '/user/${USER}/myhive.db';
+
+use ${USER};
+
 # Use this query to locate a distinct search value for testing.
 # The generated data will start with any of these characters
 #    ABDEF12345

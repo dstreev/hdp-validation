@@ -1,4 +1,6 @@
-use hdp_validation;
+create database if not exists ${USER} location '/user/${USER}/myhive.db';
+
+use ${USER};
 
 set hive.execution.engine=${EXEC_ENGINE};
 set hive.execution.engine;
@@ -19,17 +21,16 @@ consent BOOLEAN,
 direction string
 )
 PARTITIONED BY (MY_PART STRING)
-STORED AS ORC
-LOCATION '/tmp/validation_partition_table_orc';
+STORED AS ORC;
 
 -- Allow Dynamic partition creation
 set hive.exec.dynamic.partition.mode=nonstrict;
 
-FROM generated_src
+FROM validation_generated_src
 INSERT OVERWRITE table validation_partition_table PARTITION (MY_PART)
 SELECT 
     start_dtm, end_dtm,
-    default.convert_to_date('MM/dd/yyyy', dt_to_convert),
+    convert_to_date('MM/dd/yyyy', dt_to_convert),
     nm, some_int,
     an_ip_addr,
     a_null,

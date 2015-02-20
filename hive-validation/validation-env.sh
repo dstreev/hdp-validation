@@ -1,5 +1,6 @@
 # HS2 Location
 HS2_HOST=localhost
+HS2_PASSWORD=<your_password>
 HS2_PORT=10000
 
 # Data Generator Options

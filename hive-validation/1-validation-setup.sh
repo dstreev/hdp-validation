@@ -2,32 +2,35 @@
 # Get the environment values
 . ./validation-env.sh
 
-if [ "${USER}" != "hive" ]; then
-    echo "Should be run as the 'hive' user"
-    exit -1
-fi
+# Helps with Reruns after HS2 permissions may make files inaccessible.
+HADOOP_USER_NAME=hdfs hdfs dfs -chmod -R +rwx /user/${USER}/myhive.db
 
 # Create a DUAL table to use for testing functions.
 # Move the dual.txt file to hdfs /tmp/dual
-hdfs dfs -test -d /tmp/dual && echo "Target Directory already exists, removing"; hdfs dfs -rm -r -f -skipTrash /tmp/dual
+hdfs dfs -test -d /user/${USER}/myhive.db/dual && echo 'Target Directory already exists, removing'; hdfs dfs -rm -r -f -skipTrash /user/${USER}/myhive.db/dual
+
 # (re)Build Dual
-hdfs dfs -mkdir /tmp/dual
-hdfs dfs -put data/dual.txt /tmp/dual/
+hdfs dfs -mkdir -p /user/${USER}/myhive.db/dual
+
+hdfs dfs -put data/dual.txt /user/${USER}/myhive.db/dual/
 
 # Move the need files to HDFS.
-hdfs dfs -test -d /apps/hive/shared/validation/lib && echo "Shared Validation Lib directory exists" || echo "Need to create the /apps/hive/shared/validation/lib and make 'hive' the owner"; exit -1;
+hdfs dfs -test -d /user/${USER}/lib && echo 'Lib directory exists' || hdfs dfs -mkdir lib
 
-hdfs dfs -test -f /apps/hive/shared/validation/lib/hive.honey-1.0-SNAPSHOT-shaded.jar && \
-    echo "Jar found, replacing with current version"; hdfs dfs -rm -f  -skipTrash /apps/hive/shared/validation/lib/hive.honey-1.0-SNAPSHOT-shaded.jar
 
-hdfs dfs -put lib/hive.honey-1.0-SNAPSHOT-shaded.jar /apps/hive/shared/validation/lib
+hdfs dfs -test -f /user/${USER}/lib/hive.honey-1.0-SNAPSHOT-shaded.jar && \
+    echo 'Jar found, replacing with current version'; hdfs dfs -rm -f  -skipTrash /user/${USER}/lib/hive.honey-1.0-SNAPSHOT-shaded.jar
 
-hdfs dfs -test -d /tmp/hive-validation && echo "Existing Generated Data exists, removing"; hdfs dfs -rm -r -f -skipTrash /tmp/hive-validation
+hdfs dfs -put lib/hive.honey-1.0-SNAPSHOT-shaded.jar lib
+
+hdfs dfs -test -d /user/${USER}/myhive.db/validation_generated_src && echo 'Existing Generated Data exists, removing'; hdfs dfs -rm -r -f -skipTrash /user/${USER}/myhive.db/validation_generated_src
 
 # Run the Data Generator Tool.
 hadoop jar lib/data.gen-1.0-SNAPSHOT-shaded.jar \
 com.hortonworks.pso.data.generator.mapreduce.DataGenTool \
 -count $DG_RECORDS \
 -mappers $DG_MAPPERS \
--output /tmp/hive-validation
+-output /user/${USER}/myhive.db/validation_generated_src
 
+HADOOP_USER_NAME=hdfs hdfs dfs -chmod -R +rx /user/${USER}/lib
+HADOOP_USER_NAME=hdfs hdfs dfs -chmod -R +rwx /user/${USER}/myhive.db

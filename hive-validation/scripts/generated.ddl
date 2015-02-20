@@ -1,9 +1,9 @@
-create database if not exists hdp_validation;
+create database if not exists ${USER} location '/user/${USER}/myhive.db';
 
-use hdp_validation;
+use ${USER};
 
-drop table if exists generated_src;
-create external table generated_src (
+drop table if exists validation_generated_src;
+create external table validation_generated_src (
 start_dtm string,
 end_dtm string,
 dt_to_convert string,
@@ -19,7 +19,6 @@ direction string
 ROW FORMAT DELIMITED 
 FIELDS TERMINATED BY ','
 NULL DEFINED AS 'NULL'
-STORED AS TEXTFILE
-LOCATION '/tmp/hive-validation';
+STORED AS TEXTFILE;
 -- Note, the added line after the last statement is important to ensure
 --   beeline processes the last request.
