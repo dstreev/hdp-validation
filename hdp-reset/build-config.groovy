@@ -1,7 +1,9 @@
 #!/usr/bin/env groovy
 
 def cli = new CliBuilder()
-cli.sf(longOpt: 'source-file', args: 1, required: true, 'Source File of current properties, REQUIRED')
+cli.af(longOpt: 'ambari-source-file', args: 1, required: true, 'Source File of current properties, REQUIRED')
+cli.xbd(longOpt: 'xml-base-dir', args: 1, required: false, 'XML Source File of current properties, OPTIONAL')
+cli.xc(longOpt: 'xml-component', args: 1, required: false, 'XML Component File of current properties, OPTIONAL')
 cli.cf(longOpt: 'check-file', args: 1, required: true, 'Check configuration file, REQUIRED')
 cli.osf(longOpt: 'output-set-file', args: 1, required: false, 'Output Set File that will be posted to Ambari')
 
@@ -13,7 +15,20 @@ def component_properties = [:]
 
 def inSection = false;
 
-ambari_properties = new File(options.sf);
+/*
+baseDirectory = new File(options.xbd);
+
+baseDirectory.eachDirRecurse { directory ->
+    directory.eachFile(FileType.FILES, {
+        file ->
+            if (file.name.equals(options.xc + ".xml")) {
+                println("File Parent: " + file.parentFile.name);
+            }
+    })
+}
+ */
+
+ambari_properties = new File(options.af);
 ambari_properties.eachLine { line ->
     // Find the line
     if ( !inSection && line.startsWith("\"properties\"")) {
