@@ -1,15 +1,22 @@
 #!/bin/bash
 
+cd `dirname $0`
+
 export HDP_ENV=$1
 
-if [ -f ${HDP_ENV}-env.sh ]; then
+if [ -f env/${HDP_ENV}-env.sh ]; then
     SCRIPT="${HDP_ENV}-env.sh"
-    . ./$SCRIPT
+    . env/$SCRIPT
 else
-    . ./hdp-env.sh
+    . env/hdp-env.sh
     export HDP_ENV=default
 fi
 
-for component in core-site hadoop-env hbase-site hcat-env hdfs-site hive-env hive-site mapred-site oozie-env oozie-site tez-site webhcat-site yarn-env yarn-site; do
-    ./get-component-cfg.sh $component
+DT=`date +%Y%m%d_%H%M%S`
+
+COMPONENT_LIST="Component_List_2.1.txt"
+
+for component in `cat ${COMPONENT_LIST}`; do
+#    echo "${component}"
+    ./get-component-cfg.sh $component $DT
 done

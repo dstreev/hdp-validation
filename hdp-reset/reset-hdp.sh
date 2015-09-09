@@ -33,7 +33,8 @@ done
 if [ "${SOURCE}" == "xml" ]; then
     COMPONENTS="core-site hdfs-site hive-site mapred-site oozie-site tez-site webhcat-site yarn-site"
 else
-    COMPONENTS="core-site hadoop-env hcat-env hdfs-site hive-env hive-site mapred-site oozie-env oozie-site tez-site webhcat-site yarn-env yarn-site"
+    COMPONENTS="core-site hadoop-env hbase-site hbase-env hbase-policy hcat-env hdfs-site hive-env hive-site mapred-site oozie-env oozie-site tez-site webhcat-site yarn-env yarn-site"
+#    COMPONENTS="core-site hadoop-env hcat-env hdfs-site hive-env hive-site mapred-site oozie-env oozie-site tez-site webhcat-site yarn-env yarn-site"
 fi
 
 for COMPONENT in ${COMPONENTS}; do

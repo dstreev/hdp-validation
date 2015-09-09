@@ -14,7 +14,7 @@
 "hadoop.security.auth_to_local"|"\n RULE:[2:$1@$0]([rn]m@.*)s/.*/yarn/\n RULE:[2:$1@$0](jhs@.*)s/.*/mapred/\n RULE:[2:$1@$0]([nd]n@.*)s/.*/hdfs/\n RULE:[2:$1@$0](hm@.*)s/.*/hbase/\n RULE:[2:$1@$0](rs@.*)s/.*/hbase/\n DEFAULT"|ENSURE
 "hadoop.security.authentication"|"simple"|ENSURE
 "hadoop.security.authorization"|"false"|ENSURE
-"io.compression.codecs"|"org.apache.hadoop.io.compress.GzipCodec,org.apache.hadoop.io.compress.DefaultCodec,org.apache.hadoop.io.compress.SnappyCodec"|RESET
+"io.compression.codecs"|"org.apache.hadoop.io.compress.GzipCodec,org.apache.hadoop.io.compress.DefaultCodec,org.apache.hadoop.io.compress.SnappyCodec"|ENSURE
 "io.file.buffer.size"|"131072"|ENSURE
 "io.serializations"|"org.apache.hadoop.io.serializer.WritableSerialization"|RESET
 "ipc.client.connect.max.retries"|"50"|RESET

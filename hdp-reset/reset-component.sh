@@ -2,7 +2,7 @@
 
 cd `dirname $0`
 
-. ./hdp-env.sh
+. env/comcast-prod-env.sh
 
 SECTION=$1
 

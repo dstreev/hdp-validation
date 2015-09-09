@@ -1,0 +1,3 @@
+"security.admin.protocol.acl"|"*"|ENSURE
+"security.client.protocol.acl"|"*"|ENSURE
+"security.masterregion.protocol.acl"|"*"|ENSURE

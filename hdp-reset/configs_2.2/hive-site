@@ -44,7 +44,7 @@
 "hive.exec.scratchdir"|"/tmp/hive"|RESET
 "hive.exec.submit.local.task.via.child"|"true"|RESET
 "hive.exec.submitviachild"|"false"|RESET
-"hive.execution.engine"|"mr"|RESET
+"hive.execution.engine"|"mr"|ENSURE
 "hive.fetch.task.aggr"|"false"|RESET
 "hive.fetch.task.conversion"|"more"|RESET
 "hive.fetch.task.conversion.threshold"|"1073741824"|ENSURE

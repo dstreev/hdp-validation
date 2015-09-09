@@ -2,7 +2,7 @@
 "hadoop.registry.zk.quorum"|"localhost1:2181,localhost2:2181,localhost3:2181"|ENSURE
 "yarn.acl.enable"|"false"|ENSURE
 "yarn.admin.acl"|""|ENSURE
-"yarn.application.classpath"|"$HADOOP_CONF_DIR,/usr/hdp/current/hadoop-client/*,/usr/hdp/current/hadoop-client/lib/*,/usr/hdp/current/hadoop-hdfs-client/*,/usr/hdp/current/hadoop-hdfs-client/lib/*,/usr/hdp/current/hadoop-yarn-client/*,/usr/hdp/current/hadoop-yarn-client/lib/*"|ENSURE
+"yarn.application.classpath"|"$HADOOP_CONF_DIR,/usr/hdp/current/hadoop-client/*,/usr/hdp/current/hadoop-client/lib/*,/usr/hdp/current/hadoop-hdfs-client/*,/usr/hdp/current/hadoop-hdfs-client/lib/*,/usr/hdp/current/hadoop-yarn-client/*,/usr/hdp/current/hadoop-yarn-client/lib/*"|RESET
 "yarn.client.nodemanager-connect.max-wait-ms"|"900000"|ENSURE
 "yarn.client.nodemanager-connect.retry-interval-ms"|"10000"|ENSURE
 "yarn.log-aggregation-enable"|"true"|ENSURE
@@ -52,7 +52,7 @@
 "yarn.resourcemanager.connect.max-wait.ms"|"900000"|ENSURE
 "yarn.resourcemanager.connect.retry-interval.ms"|"30000"|ENSURE
 "yarn.resourcemanager.fs.state-store.retry-policy-spec"|"2000, 500"|ENSURE
-"yarn.resourcemanager.fs.state-store.uri"|" "|ENSURE
+"yarn.resourcemanager.fs.state-store.uri"|"${hadoop.tmp.dir}/yarn/system/rmstore"|ENSURE
 "yarn.resourcemanager.ha.enabled"|"false"|ENSURE
 "yarn.resourcemanager.hostname"|"ip-172-31-14-9.ec2.internal"|ENSURE
 "yarn.resourcemanager.nodes.exclude-path"|"/etc/hadoop/conf/yarn.exclude"|ENSURE
@@ -94,3 +94,11 @@
 "yarn.timeline-service.ttl-ms"|"2678400000"|ENSURE
 "yarn.timeline-service.webapp.address"|"localhost:8188"|ENSURE_ALERT
 "yarn.timeline-service.webapp.https.address"|"localhost:8190"|ENSURE_ALERT
+# Pepper Data Entries
+"pepperdata.yarn.nodemanager.container-executor.class"|"org.apache.hadoop.yarn.server.nodemanager.DefaultContainerExecutor"|ENSURE
+"yarn.ipc.client.factory.class"|"org.apache.hadoop.yarn.factories.impl.PepperdataRpcClientFactory"|ENSURE
+"pepperdata.supervisor.allocation.create.freeMemoryPercent"|"25"|ENSURE
+"pepperdata.supervisor.allocation.remove.freeMemoryPercent"|"10"|ENSURE
+"pepperdata.supervisor.allocation.max.percent"|"200"|ENSURE
+"pepperdata.supervisor.splitTest.percent"|"95"|ENSURE
+"pepperdata.supervisor.jobgroup.configPath"|"/etc/hadoop/conf/pepperdata-jobgroup.xml"|ENSURE

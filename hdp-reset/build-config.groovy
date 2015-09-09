@@ -80,16 +80,18 @@ check_file.eachLine { line ->
             case "ENSURE":
                 if (component_properties.get(key,"NOT_SET").equals("NOT_SET")) {
                     target_properties.put(key, value)
-                } else {
-                    target_properties.put(key, value)
-                }
+                } 
+                // else {
+                    // target_properties.put(key, value)
+               //  }
                 break
             case "ENSURE_ALERT":
                 if (component_properties.get(key,"NOT_SET").equals("NOT_SET")) {
                     target_properties.put(key, value)
-                } else {
-                    target_properties.put(key, component_properties.get(key))
                 }
+                // else {
+                   // target_properties.put(key, component_properties.get(key))
+                //}
                 break
         }
     }
