@@ -1,0 +1,16 @@
+core-site
+hadoop-env
+hbase-site
+hbase-env
+hbase-policy
+hcat-env
+hdfs-site
+hive-env
+hive-site
+mapred-site
+oozie-env
+oozie-site
+tez-site
+webhcat-site
+yarn-env
+yarn-site""\ "
