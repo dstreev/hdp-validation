@@ -5,7 +5,7 @@ cd `dirname $0`
 SECTION=$1
 DT=$2
 
-if [ ${DT} == "" ]; then
+if [ "${DT}" == "" ]; then
     DT=`date +%Y%m%d_%H%M%S`
 fi
 
